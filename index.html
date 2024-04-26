@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .heading{
+            display: flex;
+            justify-content: center;
+        }
+        .num{
+            display: flex;
+            justify-content: center;
+        }
+       
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        
+       
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 60px;
+            
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border-radius: 8px;
+            
+            
+        }
+    </style>
+    <h2 class="heading">Stopwatch javascript Function</h2>
+
+    <div class="container">
+        <div class="num">
+            <h2 class="hr" id="hour">00</h2>
+            <h2>:</h2>
+            <h2 class="hr" id="minutes">00</h2>
+            <h2>:</h2>
+            <h2  class="hr"id="second">00</h2>
+            <h2>:</h2>
+            <h2 class="hr" id="milisecond">00</h2>
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btn" onclick="start()">Start</button>
+        <button id="btn" onclick="stop()">Stop</button>
+        <button id="btn" onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let Hours = 0;
+        let Minutes = 0;
+        let Seconds=0;
+        let milisecond = 0
+
+        let timer =false;
+
+        function start(){
+            timer = true;
+            timerFunction();
+
+        }
+        function stop(){
+            timer =false;
+            timerFunction()
+        }
+        function reset(){
+            location.reload()
+        }
+        function timerFunction(){
+            if(timer == true){
+                milisecond=milisecond +1;
+                if(milisecond==100){
+                    Seconds=Seconds +1;
+                    milisecond = 0;
+                }
+                if(Seconds==60){
+                    Minutes = Minutes +1;
+                    Seconds = 0;
+                }
+                if(Minutes==60){
+                    Hours = Hours +1;
+                    Minutes = 0;
+                }
+                let getHours=Hours;
+                let getSecond=Seconds;
+                let getMinute=Minutes;
+                
+                if(Hours<10){
+                    getHours="0"+Hours;
+                }
+                if(Seconds<10){
+                    getSecond="0"+Seconds
+                }
+                if(Minutes<10){
+                    getMinute="0"+Minutes;
+                }
+
+                setTimeout("timerFunction()",10)
+                document.getElementById("milisecond").innerHTML=milisecond;
+                document.getElementById("second").innerHTML=getSecond;
+                document.getElementById("minutes").innerHTML=getMinute;
+                document.getElementById("hour").innerHTML=getHours;
+
+
+            }
+
+        }
+
+
+
+
+
+    
+
+    </script>
+</body>
+</html>
