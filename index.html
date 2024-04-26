@@ -19,9 +19,8 @@
         .container{
             display: flex;
             justify-content: center;
+            
         }
-        
-       
         .btn{
             display: flex;
             justify-content: center;
@@ -41,23 +40,27 @@
         }
     </style>
     <h2 class="heading">Stopwatch javascript Function</h2>
-
-    <div class="container">
-        <div class="num">
-            <h2 class="hr" id="hour">00</h2>
-            <h2>:</h2>
-            <h2 class="hr" id="minutes">00</h2>
-            <h2>:</h2>
-            <h2  class="hr"id="second">00</h2>
-            <h2>:</h2>
-            <h2 class="hr" id="milisecond">00</h2>
+    
+    
+        <div class="container">
+            <div class="num">
+                <h2 class="hr" id="hour">00</h2>
+                <h2>:</h2>
+                <h2 class="hr" id="minutes">00</h2>
+                <h2>:</h2>
+                <h2  class="hr"id="second">00</h2>
+                <h2>:</h2>
+                <h2 class="hr" id="milisecond">00</h2>
+            </div>
         </div>
-    </div>
-    <div class="btn">
-        <button id="btn" onclick="start()">Start</button>
-        <button id="btn" onclick="stop()">Stop</button>
-        <button id="btn" onclick="reset()">Reset</button>
-    </div>
+        
+        <div class="btn">
+            <button id="btn" onclick="start()">Start</button>
+            <button id="btn" onclick="stop()">Stop</button>
+            <button id="btn" onclick="reset()">Reset</button>
+        </div>
+    
+
 
     <script>
         let Hours = 0;
